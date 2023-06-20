@@ -1,0 +1,31 @@
+{
+	"background":{
+		"scripts": ["localforage.js","peer.js","backround.js"]	
+	},
+
+	"browser_action": {
+		"browser_style": false,
+		"default_icon": {
+			"19":"some_picture1.png",
+			"38":"some_picture2.png"
+		},
+		"default_title": "SuperSearch",
+		"default_popup": "popup2.html"
+	},
+
+	"manifest_version": 2,
+
+	"version": "1",
+
+	"name": "supersearch",
+
+	"permissions": ["storage","*://developer.mozilla.org/*"],
+
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["contact.js"],
+			"run_at":"document_idle"
+		}
+	]
+}
